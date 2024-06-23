@@ -1,3 +1,19 @@
-@use '../../styles/Reset.scss';
-@use '../../styles/Colors.scss';
-@use '../../styles/Fonts.scss';
+@import '../../styles/Reset.module.scss';
+@import '../../styles/Mixins.module.scss';
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100svh;
+}
+
+main {
+    @include gap-1('margin-block');
+    @include gap-2('margin-inline');
+}
+
+h1 {
+    font-size: 2rem;
+    color: grey;
+}

@@ -1,0 +1,44 @@
+@import '../../styles/Colors.module.scss';
+@import '../../styles/Mixins.module.scss';
+
+:export {
+    colorPrimary: $color-primary;
+    logoHeader: clamp(47px, 6vw, 68px);
+}
+
+.header {
+    @include size-1('font-size');
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include gap-1('padding-block');
+    @include gap-2('padding-inline');
+    nav {
+        display: flex;
+        @include gap-0('gap');
+    }
+}
+
+.link {
+    &::after {
+        content: '';
+        position: relative;
+        display: block;
+        top: -4px;
+        width: 0;
+        height: 2px;
+        background-color: $color-tertiary;
+        transition: width 0.3s cubic-bezier(0, 0.6, 0.4, 1);
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.active {
+    &::after {
+        width: 100%;
+    }
+}
