@@ -1,0 +1,8 @@
+@import '../../styles/Mixins.module.scss';
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include gap-2030('gap');
+}

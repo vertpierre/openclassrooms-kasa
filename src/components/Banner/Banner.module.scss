@@ -9,7 +9,7 @@
 
     .imageContainer {
         grid-area: 1 / 1 / 2 / 2;
-        @include radius-0('border-radius');
+        @include radius-1025('border-radius');
         overflow: hidden;
         width: 100%;
         height: $height;
@@ -26,7 +26,7 @@
     }
 
     .title {
-        @include size-2('font-size');
+        @include size-2448('font-size');
         font-weight: $font-weight-bold;
         align-self: center;
         justify-self: center;
