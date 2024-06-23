@@ -1,0 +1,28 @@
+@import '../../styles/Mixins.module.scss';
+@import '../../styles/Colors.module.scss';
+
+.home {
+    display: flex;
+    flex-direction: column;
+    @include gap-1('gap');
+
+    .cardsContainer {
+        background-color: $color-frame;
+        display: grid;
+        @include gap-2('gap');
+        @include gap-2('padding');
+        @include radius-0('border-radius');
+
+        @media (min-width: $breakpoint-medium) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: $breakpoint-medium) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: $breakpoint-small) {
+            grid-template-columns: 1fr;
+            background-color: $color-light;
+            padding: 0;
+        }
+    }
+}

@@ -11,7 +11,7 @@ const Header = () => {
                     height={styles.logoHeader}
                 />
             </NavLink>
-            <nav>
+            <nav className={styles.nav}>
                 <NavLink
                     to="/"
                     className={({ isActive }) => {
