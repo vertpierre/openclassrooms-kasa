@@ -9,7 +9,6 @@
 .header {
     @include size-1224('font-size');
     width: 100%;
-    text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,6 +19,7 @@
         gap: clamp(30px, 4vw, 60px);
         @media (max-width: $breakpoint-small) {
             gap: 30px;
+            text-transform: uppercase;
         }
         @media (min-width: $breakpoint-medium) {
             gap: 60px;

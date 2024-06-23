@@ -1,0 +1,42 @@
+@import '../../styles/Mixins.module.scss';
+@import '../../styles/Colors.module.scss';
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 80px;
+    gap: 110px;
+    @media (min-width: $breakpoint-small) {
+        gap: 140px;
+    }
+
+    h1, h2 {
+        color: $color-primary;
+    }
+
+    h1 {
+        font-size: clamp(96px, 20vw, 288px);
+        font-weight: $font-weight-bold;
+        height: clamp(96px, 20vw, 288px);
+        line-height: 1em;
+    }
+
+    h2 {
+        @include size-1836('font-size');
+        text-align: center;
+    }
+
+    .link {
+        @include size-1418('font-size');
+        text-decoration: underline;
+    }
+
+    br {
+        display: none;
+        @media (max-width: $breakpoint-medium) {
+            display: block;
+        }
+    }
+}
