@@ -10,7 +10,7 @@ body {
 
 main {
     @include gap-1('margin-block');
-    @include gap-2('margin-inline');
+    @include gap-3('margin-inline');
 }
 
 h1 {

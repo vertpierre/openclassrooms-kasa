@@ -1,43 +1,90 @@
-$breakpoint-small: 512px;
-$breakpoint-medium: 768px;
-$breakpoint-large: 1024px;
+$breakpoint-small: 640px;
+$breakpoint-medium: 960px;
+$breakpoint-large: 1440px;
+
+// Font size mixins
+
+$font-size-small: 12px;
+$font-size-medium: 18px;
+$font-size-large: 24px;
+$font-size-xlarge: 48px;
+
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
 @mixin size-1($property) {
-    #{$property}: clamp(12px, 0.4rem + 1.6vw, 24px);
+    #{$property}: clamp($font-size-small, 0.4rem + 1.6vw, $font-size-large);
     @media (max-width: $breakpoint-small) {
-        #{$property}: 12px;
+        #{$property}: $font-size-small;
     }
     @media (min-width: $breakpoint-large) {
-        #{$property}: 24px;
+        #{$property}: $font-size-large;
     }
 }
 
-@mixin gap-0($property) {
-    #{$property}: clamp(30px, 0.4rem + 3.2vw, 60px);
+@mixin size-2($property) {
+    #{$property}: clamp($font-size-large, 0.2rem + 3.2vw, $font-size-xlarge);
     @media (max-width: $breakpoint-small) {
-        #{$property}: 30px;
+        #{$property}: $font-size-large;
     }
     @media (min-width: $breakpoint-large) {
-        #{$property}: 60px;
+        #{$property}: $font-size-xlarge;
+    }
+}
+
+// Gap, padding, margin mixins
+
+@mixin gap-0($property) {
+    #{$property}: clamp(16px, 3vw, 32px);
+    @media (max-width: $breakpoint-small) {
+        #{$property}: 16px;
+    }
+    @media (min-width: $breakpoint-medium) {
+        #{$property}: 32px;
     }
 }
 
 @mixin gap-1($property) {
-    #{$property}: clamp(20px, 4vw, 45px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 20px;
+    #{$property}: clamp(26px, 4vw, 52px);
+    @media (max-width: $breakpoint-medium) {
+        #{$property}: 26px;
     }
     @media (min-width: $breakpoint-large) {
-        #{$property}: 45px;
+        #{$property}: 52px;
     }
 }
 
 @mixin gap-2($property) {
-    #{$property}: clamp(20px, 9vw, 100px);
+    #{$property}: clamp(20px, 0.2rem + 3.2vw, 48px);
     @media (max-width: $breakpoint-small) {
         #{$property}: 20px;
     }
     @media (min-width: $breakpoint-large) {
+        #{$property}: 48px;
+    }
+}
+
+@mixin gap-3($property) {
+    #{$property}: clamp(20px, 9vw, 100px);
+    @media (max-width: $breakpoint-medium) {
+        #{$property}: 20px;
+    }
+    @media (min-width: $breakpoint-large) {
         #{$property}: 100px;
+    }
+}
+
+// Radius mixins
+
+$radius-small: 10px;
+$radius-medium: 25px;
+
+@mixin radius-0($property) {
+    #{$property}: clamp($radius-small, 1.6vw, $radius-medium);
+    @media (max-width: $breakpoint-small) {
+        #{$property}: $radius-small;
+    }
+    @media (min-width: $breakpoint-large) {
+        #{$property}: $radius-medium;
     }
 }

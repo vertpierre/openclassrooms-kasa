@@ -12,11 +12,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include gap-1('padding-block');
-    @include gap-2('padding-inline');
-    nav {
+    @include gap-1('padding-top');
+    @include gap-3('padding-inline');
+    .nav {
         display: flex;
-        @include gap-0('gap');
+        gap: clamp(30px, 4vw, 60px);
+        @media (max-width: $breakpoint-small) {
+            gap: 30px;
+        }
+        @media (min-width: $breakpoint-medium) {
+            gap: 60px;
+        }
     }
 }
 
@@ -25,11 +31,15 @@
         content: '';
         position: relative;
         display: block;
-        top: -4px;
+        top: -3px;
         width: 0;
         height: 2px;
-        background-color: $color-tertiary;
+        background-color: $color-dark;
         transition: width 0.3s cubic-bezier(0, 0.6, 0.4, 1);
+        @media (max-width: $breakpoint-small) {
+            top: -2px;
+            height: 1px;
+        }
     }
 
     &:hover::after {

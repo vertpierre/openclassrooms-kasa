@@ -1,0 +1,46 @@
+@import '../../styles/Colors.module.scss';
+@import '../../styles/Mixins.module.scss';
+
+.banner {
+    $height: clamp(115px, 50px + 12vw, 225px);
+
+    display: grid;
+    height: $height;
+
+    .imageContainer {
+        grid-area: 1 / 1 / 2 / 2;
+        @include radius-0('border-radius');
+        overflow: hidden;
+        width: 100%;
+        height: $height;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-dark;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            opacity: 0.4;
+        }
+    }
+
+    .title {
+        @include size-2('font-size');
+        font-weight: $font-weight-bold;
+        align-self: center;
+        justify-self: center;
+        grid-area: 1 / 1 / 2 / 2;
+        z-index: 1;
+        color: $color-light;
+        @media (max-width: $breakpoint-small) {
+            padding-inline: 18px;
+            justify-self: start;
+        }
+        br {
+            @media (min-width: $breakpoint-small) {
+                display: none;
+            }
+        }
+    }
+}
