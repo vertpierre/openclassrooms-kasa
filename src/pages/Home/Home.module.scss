@@ -4,14 +4,14 @@
 .home {
     display: flex;
     flex-direction: column;
-    @include gap-1('gap');
+    @include gap-2652('gap');
 
     .cardsContainer {
         background-color: $color-frame;
         display: grid;
-        @include gap-2('gap');
-        @include gap-2('padding');
-        @include radius-0('border-radius');
+        @include gap-2048('gap');
+        @include gap-2048('padding');
+        @include radius-1025('border-radius');
 
         @media (min-width: $breakpoint-medium) {
             grid-template-columns: repeat(3, 1fr);

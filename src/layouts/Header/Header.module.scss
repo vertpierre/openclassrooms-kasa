@@ -7,13 +7,14 @@
 }
 
 .header {
-    @include size-1('font-size');
+    @include size-1224('font-size');
+    width: 100%;
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include gap-1('padding-top');
-    @include gap-3('padding-inline');
+    @include gap-2652('padding-top');
+    @include gap-20100('padding-inline');
     .nav {
         display: flex;
         gap: clamp(30px, 4vw, 60px);
