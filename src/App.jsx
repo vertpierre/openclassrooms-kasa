@@ -16,9 +16,14 @@ import useFetch from './utils/hooks/UseFetch';
 const PropertyRedirect = ({ properties }) => {
     const { id } = useParams();
 
-    if (properties.map((property) => property.id).includes(id)) {
-        return <Property property={properties.find((p) => p.id === id)} />;
+    // Find the property that matches the id from the URL
+    const selectedProperty = properties.find((property) => property.id === id);
+
+    if (selectedProperty) {
+        // If a matching property is found, return all its data
+        return <Property property={selectedProperty} />;
     } else {
+        // If no matching property is found, redirect to the error page
         return <Navigate to="/error" />;
     }
 };
