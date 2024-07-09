@@ -1,0 +1,63 @@
+@import '../../styles/Mixins.module.scss';
+@import '../../styles/Colors.module.scss';
+
+:export {
+    ratingSize: clamp(13px, 2vw, 24px);
+}
+
+.title {
+    @include size-medium('font-size', 18, 36);
+    color: $color-primary;
+}
+
+.containerInfos {
+    display: flex;
+    justify-content: space-between;
+    @include size-medium('margin-block', 15, 30);
+
+    @media (max-width: $breakpoint-small) {
+        flex-direction: column;
+    }
+}
+
+.containerHostRating {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include size-medium('gap', 12, 24);
+    @include size-small('margin-bottom', 0, 4);
+    @include size-large('margin-left', 0, 70);
+
+    @media (max-width: $breakpoint-small) {
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-top: 15px;
+    }
+}
+
+.host {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    .hostName {
+        text-align: right;
+        @include size-small('font-size', 12, 18);
+        color: $color-primary;
+    }
+
+    .hostImg {
+        border-radius: 50%;
+        @include size-medium('width', 32, 64);
+    }
+}
+
+.infoCollapse {
+    display: flex;
+    @include size-large('gap', 20, 70);
+
+    @media (max-width: $breakpoint-small) {
+        flex-direction: column;
+    }
+}

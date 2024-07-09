@@ -1,23 +1,21 @@
 import styles from './About.module.scss';
-import Banner from '../../components/Banner/Banner';
-import Collapse from '../../components/Collapse/Collapse';
+import Banner from '../../molecules/Banner/Banner';
+import Collapse from '../../molecules/Collapse/Collapse';
+import aboutImage from '../../../public/assets/images/about.webp';
 
+// Define the aboutList object with key-value pairs for each section
 const aboutList = {
-    fiability: [
+    fiability:
         'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.',
-    ],
-    respect: [
+    respect:
         'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.',
-    ],
-    service: [
+    service:
         "Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.",
-    ],
-    safety: [
-        "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
-    ],
+    safety: "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
 };
 
 const About = () => {
+    // Function to get the title from the key
     const getTitleFromKey = (key) => {
         const titleMap = {
             fiability: 'Fiabilité',
@@ -32,7 +30,7 @@ const About = () => {
         <div className={styles.about}>
             <Banner
                 title=""
-                image="src/assets/images/about.webp"
+                image={aboutImage}
                 opacity={0.7}
             />
             {Object.entries(aboutList).map(([key, value]) => (

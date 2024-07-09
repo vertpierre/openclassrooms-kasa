@@ -1,15 +1,26 @@
 import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
-import Banner from '../../components/Banner/Banner';
-import Card from '../../components/Card/Card';
-import PropTypes from 'prop-types';
+import Banner from '../../molecules/Banner/Banner';
+import Card from '../../molecules/Card/Card';
+import useFetch from '../../utils/hooks/UseFetch';
+import { Navigate } from 'react-router-dom';
+import homeImage from '../../../public/assets/images/home.webp';
 
-const Home = ({ properties }) => {
+const Home = () => {
+    const {
+        data: properties,
+        loading,
+        error,
+    } = useFetch('/server/properties_data.json');
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <Navigate to="/error" />;
+
     return (
         <div className={styles.home}>
             <Banner
                 title={['Chez vous, ', <br key="br" />, 'partout et ailleurs']}
-                image="src/assets/images/home.webp"
+                image={homeImage}
                 opacity={0.4}
             />
             <section className={styles.cardsContainer}>
@@ -21,10 +32,6 @@ const Home = ({ properties }) => {
             </section>
         </div>
     );
-};
-
-Home.propTypes = {
-    properties: PropTypes.array.isRequired,
 };
 
 export default Home;

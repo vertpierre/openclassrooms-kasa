@@ -2,114 +2,59 @@ $breakpoint-small: 640px;
 $breakpoint-medium: 960px;
 $breakpoint-large: 1440px;
 
-// Font size mixins
+// Font size
 
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-@mixin size-1016($property) {
-    #{$property}: clamp(12px, 0.4rem + 0.8vw, 16px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 12px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 16px;
-    }
-}
-
-@mixin size-1418($property) {
-    #{$property}: clamp(14px, 0.4rem + 1vw, 18px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 14px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 18px;
-    }
-}
-
-@mixin size-1224($property) {
-    #{$property}: clamp(12px, 0.4rem + 1.2vw, 24px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 12px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 24px;
-    }
-}
-
-@mixin size-1836($property) {
-    #{$property}: clamp(18px, 0.4rem + 2vw, 36px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 18px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 36px;
-    }
-}
-
-@mixin size-2448($property) {
-    #{$property}: clamp(24px, 0.4rem + 3.2vw, 48px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 24px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 48px;
-    }
-}
-
-// Gap, padding, margin mixins
-
-@mixin gap-2030($property) {
-    #{$property}: clamp(20px, 3vw, 30px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 20px;
-    }
-    @media (min-width: $breakpoint-medium) {
-        #{$property}: 30px;
-    }
-}
-
-@mixin gap-2048($property) {
-    #{$property}: clamp(20px, 0.2rem + 3.2vw, 48px);
-    @media (max-width: $breakpoint-small) {
-        #{$property}: 20px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 48px;
-    }
-}
-
-@mixin gap-2652($property) {
-    #{$property}: clamp(26px, 4vw, 52px);
-    @media (max-width: $breakpoint-medium) {
-        #{$property}: 26px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 52px;
-    }
-}
-
-@mixin gap-20100($property) {
-    #{$property}: clamp(20px, 9vw, 100px);
-    @media (max-width: $breakpoint-medium) {
-        #{$property}: 20px;
-    }
-    @media (min-width: $breakpoint-large) {
-        #{$property}: 100px;
-    }
-}
-
-// Radius mixins
+// Radius
 
 $radius-small: 10px;
 $radius-medium: 25px;
 
-@mixin radius-1025($property) {
-    #{$property}: clamp($radius-small, 1.6vw, $radius-medium);
+// General size mixin
+
+// Mixin for small sizes (divisor: 4)
+@mixin size-small($property, $sizemin, $sizemax) {
+    #{$property}: clamp(
+        #{$sizemin}px,
+        #{calc(($sizemax - $sizemin) / 4)}vw,
+        #{$sizemax}px
+    );
     @media (max-width: $breakpoint-small) {
-        #{$property}: $radius-small;
+        #{$property}: #{$sizemin}px;
     }
     @media (min-width: $breakpoint-large) {
-        #{$property}: $radius-medium;
+        #{$property}: #{$sizemax}px;
+    }
+}
+
+// Mixin for medium sizes (divisor: 6)
+@mixin size-medium($property, $sizemin, $sizemax) {
+    #{$property}: clamp(
+        #{$sizemin}px,
+        #{calc(($sizemax - $sizemin) / 6)}vw,
+        #{$sizemax}px
+    );
+    @media (max-width: $breakpoint-small) {
+        #{$property}: #{$sizemin}px;
+    }
+    @media (min-width: $breakpoint-large) {
+        #{$property}: #{$sizemax}px;
+    }
+}
+
+// Mixin for large sizes (divisor: 12)
+@mixin size-large($property, $sizemin, $sizemax) {
+    #{$property}: clamp(
+        #{$sizemin}px,
+        #{calc(($sizemax - $sizemin) / 12)}vw,
+        #{$sizemax}px
+    );
+    @media (max-width: $breakpoint-small) {
+        #{$property}: #{$sizemin}px;
+    }
+    @media (min-width: $breakpoint-large) {
+        #{$property}: #{$sizemax}px;
     }
 }

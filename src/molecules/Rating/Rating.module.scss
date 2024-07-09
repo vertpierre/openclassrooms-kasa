@@ -1,8 +1,6 @@
 @import '../../styles/Mixins.module.scss';
 
-.about {
+.rating {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    @include size-small('gap', 20, 30);
 }

@@ -1,0 +1,48 @@
+@import '../../styles/Colors.module.scss';
+@import '../../styles/Mixins.module.scss';
+
+:export {
+    colorPrimary: $color-primary;
+    logoHeader: clamp(47px, 6vw, 68px);
+}
+
+.header {
+    @include size-medium('font-size', 12, 24);
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include size-medium('padding-top', 20, 52);
+    @include size-large('padding-inline', 20, 100);
+    .nav {
+        display: flex;
+        @include size-medium('gap', 30, 60);
+        @media (max-width: $breakpoint-small) {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.link {
+    &::after {
+        content: '';
+        position: relative;
+        display: block;
+        top: -3px;
+        width: 0;
+        @include size-small('height', 1, 2);
+        background-color: $color-dark;
+        transition: width 0.3s cubic-bezier(0, 0.6, 0.4, 1);
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.active {
+    &::after {
+        width: 100%;
+    }
+}

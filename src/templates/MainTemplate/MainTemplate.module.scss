@@ -1,0 +1,24 @@
+@import '../../styles/Reset.module.scss';
+@import '../../styles/Mixins.module.scss';
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-width: 360px;
+}
+
+:global(#root) {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main {
+    max-width: 1440px;
+}
+
+.main {
+    width: 100%;
+    @include size-medium('padding-block', 26, 52);
+    @include size-large('padding-inline', 20, 100);
+}

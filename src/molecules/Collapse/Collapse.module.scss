@@ -1,0 +1,59 @@
+@import '../../styles/Mixins.module.scss';
+@import '../../styles/Colors.module.scss';
+
+.collapse {
+    width: 100%;
+    background-color: $color-frame;
+    @include size-small('border-radius', 5, 10);
+    overflow: hidden;
+    transition: height 0.3s ease;
+    max-width: 1025px;
+    height: min-content;
+}
+
+.collapseButton {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primary;
+    @include size-medium('font-size', 12, 24);
+    font-weight: $font-weight-bold;
+    color: $color-light;
+
+    padding-inline: clamp(10px, 0.2rem + 1.2vw, 15px);
+    padding-block: clamp(8px, 0.2rem + 0.6vw, 10px);
+    @include size-small('border-radius', 5, 10);
+}
+
+.arrow {
+    width: clamp(26px, 0.8rem + 2vw, 34px);
+    padding: 5px;
+    transform: rotate(180deg);
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.arrowOpen {
+    transform: rotate(0deg);
+}
+
+.collapseContent {
+    width: 100%;
+    padding-inline: 20px;
+    padding-block: 0px;
+    max-height: 0;
+    transform: translateY(-40px);
+    transition: transform 0.25s ease, max-height 0.25s ease,
+        padding-block 0.25s ease;
+    overflow: hidden;
+    @include size-small('font-size', 12, 18);
+}
+
+.contentOpen {
+    transform: translateY(0);
+    max-height: 30vh;
+    padding-block: 20px;
+}
