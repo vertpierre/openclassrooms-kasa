@@ -11,7 +11,6 @@ const Tag = ({ tags }) => {
     );
 };
 
-// PropTypes validation for the Tag component
 Tag.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

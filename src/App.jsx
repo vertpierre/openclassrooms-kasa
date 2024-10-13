@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import Error from './pages/Error/Error';
-import About from './pages/About/About';
-import Property from './pages/Property/Property';
+import HomePage from './pages/Home/Home';
+import NotFoundPage from './pages/NotFound/NotFound';
+import AboutPage from './pages/About/About';
+import PropertyPage from './pages/Property/Property';
 import MainTemplate from './templates/MainTemplate/MainTemplate';
 
 const App = () => {
@@ -10,10 +10,10 @@ const App = () => {
         <Router>
             <MainTemplate>
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/property/:id" element={<Property />} />
-                    <Route path="*" element={<Error />} />
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/property/:id" element={<PropertyPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </MainTemplate>
         </Router>

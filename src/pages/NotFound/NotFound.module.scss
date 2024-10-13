@@ -1,7 +1,7 @@
 @import '../../styles/Mixins.module.scss';
 @import '../../styles/Colors.module.scss';
 
-.error {
+.notFound {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,19 +12,19 @@
         gap: 140px;
     }
 
-    .errorCode,
-    .errorMessage {
+    .notFoundCode,
+    .notFoundMessage {
         color: $color-primary;
     }
 
-    .errorCode {
+    .notFoundCode {
         @include size-medium('font-size', 96, 288);
         font-weight: $font-weight-bold;
         @include size-medium('height', 96, 288);
         line-height: 1em;
     }
 
-    .errorMessage {
+    .notFoundMessage {
         @include size-medium('font-size', 18, 36);
         text-align: center;
     }

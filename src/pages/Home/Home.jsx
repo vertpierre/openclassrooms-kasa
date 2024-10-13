@@ -4,7 +4,7 @@ import Banner from '../../molecules/Banner/Banner';
 import Card from '../../molecules/Card/Card';
 import useFetch from '../../utils/hooks/UseFetch';
 import { Navigate } from 'react-router-dom';
-import homeImage from '../../../public/assets/images/home.webp';
+import homeImage from '../../../assets/images/home.webp';
 
 const Home = () => {
     const {
@@ -14,7 +14,7 @@ const Home = () => {
     } = useFetch('/server/properties_data.json');
 
     if (loading) return <div>Loading...</div>;
-    if (error) return <Navigate to="/error" />;
+    if (error) return <Navigate to="/notfound" />;
 
     return (
         <div className={styles.home}>

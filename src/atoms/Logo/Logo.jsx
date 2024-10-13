@@ -1,10 +1,5 @@
 import PropTypes from 'prop-types';
 
-/**
- * Component for Kasa logo.
- * @param {string} fill - The fill color for the logo.
- * @returns {JSX.Element} Kasa logo SVG.
- */
 const Logo = ({ fill = 'white', height = '41px' }) => {
     return (
         <svg

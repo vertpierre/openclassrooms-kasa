@@ -61,7 +61,6 @@ const useFetch = (url, cacheExpiration = 15 * 60 * 1000) => {
         localStorage.removeItem(`${url}_timestamp`);
     };
 
-    console.log('data Fetched');
     return { data, loading, error, refetch };
 };
 

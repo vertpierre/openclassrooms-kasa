@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Collapse.module.scss';
-import arrowIcon from '../../../public/assets/icons/arrow_list.svg';
+import arrowIcon from '../../../assets/icons/arrow_list.svg';
 
 const Collapse = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,6 @@ const Collapse = ({ title, content }) => {
                     className={`${styles.arrow} ${
                         isOpen ? styles.arrowOpen : ''
                     }`}
-                    aria-hidden="true"
                     aria-expanded={isOpen}
                     aria-controls="collapse-content"
                     onClick={toggleCollapse}

@@ -1,9 +1,8 @@
 import styles from './About.module.scss';
 import Banner from '../../molecules/Banner/Banner';
 import Collapse from '../../molecules/Collapse/Collapse';
-import aboutImage from '../../../public/assets/images/about.webp';
+import aboutImage from '../../../assets/images/about.webp';
 
-// Define the aboutList object with key-value pairs for each section
 const aboutList = {
     fiability:
         'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.',
@@ -15,7 +14,6 @@ const aboutList = {
 };
 
 const About = () => {
-    // Function to get the title from the key
     const getTitleFromKey = (key) => {
         const titleMap = {
             fiability: 'Fiabilité',
