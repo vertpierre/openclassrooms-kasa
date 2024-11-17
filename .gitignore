@@ -24,3 +24,5 @@ default_assets
 *.njsproj
 *.sln
 *.sw?
+
+.env

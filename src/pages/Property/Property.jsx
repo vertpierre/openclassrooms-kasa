@@ -12,7 +12,7 @@ const Property = () => {
         data: properties,
         loading,
         error,
-    } = useFetch('/server/properties_data.json');
+    } = useFetch('/properties_data.json');
 
     if (loading) return <div>Loading...</div>;
     if (error) return <Navigate to="/notfound" />;
